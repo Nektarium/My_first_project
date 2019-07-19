@@ -46,20 +46,17 @@ $users = [
 					</thead>
 
 					<tbody>
-						<?php 
-						foreach ($users as $key) {
-							echo 
-							"<tr>
-								<td>".$key['id']."</td>
-								<td>".$key['Username']."</td>
-								<td>".$key['Email']."</td>
+						<?php foreach ($users as $key) {  ?> 
+							<tr>
+								<td><?php echo $key['id'] ?></td>
+								<td><?php echo $key['Username'] ?></td>
+								<td><?php echo $key['Email'] ?></td>
 								<td>
-									<a href='edit.html' class='btn btn-warning'>Edit</a>
-									<a href='#'' onclick='return confirm('are you sure?')'' class='btn btn-danger'>Delete</a>
+									<a href="edit.html" class="btn btn-warning">Edit</a>
+									<a href="#" onclick="return confirm('are you sure?')" class="btn btn-danger">Delete</a>
 								</td>
-							</tr>";
-						}
-						?>
+							</tr>
+						<?php } ?>
 					</tbody>
 				</table>
 			</div>
