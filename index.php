@@ -1,23 +1,10 @@
-<?php 
-$users = [
+<?php
 
-	[
-		"id" => "1", 
-	"Username" => "John Doe", 
-	"Email" => "john@example.com"
-	],
+$pdo = new PDO('mysql:host=localhost;dbname=my_new_DB;charset=utf8;', 'root', '123');
+$sql = 'SELECT * FROM users';
+$statement = $pdo->query($sql);
+$users = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-	["id" => "2", 
-	"Username" => "Joseph Doe", 
-	"Email" => "joseph@example.com"
-	],
-
-	["id" => "1", 
-	"Username" => "Jane Doe", 
-	"Email" => "jane@example.com"
-	],
-
-];
 ?>
 
 <!DOCTYPE html>
@@ -46,11 +33,11 @@ $users = [
 					</thead>
 
 					<tbody>
-						<?php foreach ($users as $key) {  ?> 
+						<?php foreach ($users as $user) {  ?> 
 							<tr>
-								<td><?php echo $key['id'] ?></td>
-								<td><?php echo $key['Username'] ?></td>
-								<td><?php echo $key['Email'] ?></td>
+								<td><?php echo $user['id'] ?></td>
+								<td><?php echo $user['Username'] ?></td>
+								<td><?php echo $user['Email'] ?></td>
 								<td>
 									<a href="edit.html" class="btn btn-warning">Edit</a>
 									<a href="#" onclick="return confirm('are you sure?')" class="btn btn-danger">Delete</a>
