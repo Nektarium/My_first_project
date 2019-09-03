@@ -3,14 +3,11 @@
     $pdo = new PDO('mysql:host=localhost;dbname=my_new_DB;charset=utf8;', 'root', '123');
     $db_table = "users";
 
-    if($_POST['id']) {
-    $idLink = $_POST['id'];
-    $nameEdit = $_POST['usernameEdit'];
-	$emailEdit = $_POST['emailEdit'];
-	$passwordEdit = $_POST['passwordEdit']; 
-}
+    $idLink = isset($_GET['id']) ? $_GET['id'] : '';
     
-	   
+	$usernameEdit = $_POST['usernameEdit'];
+	$emailEdit = $_POST['emailEdit'];
+	$passwordEdit = $_POST['passwordEdit'];
 
 	if ($usernameEdit == true and $emailEdit == true and $passwordEdit == true) {
 		/*$sql = "UPDATE `users` SET `Username` = '$nameEdit', `Email` = '$emailEdit', `password` = '$passEdit' WHERE `id` = '$idLink'";

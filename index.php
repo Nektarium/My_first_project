@@ -40,7 +40,7 @@ $users = $statement->fetchAll(PDO::FETCH_ASSOC);
 								<td><?php echo $user['Username'] ?></td>
 								<td><?php echo $user['Email'] ?></td>
 								<td>
-									<a href="edit.php<?='/?id='.$user['id']?>" class="btn btn-warning">Edit</a>
+									<a href="edit.php<?='?id='.$user['id']?>" class="btn btn-warning">Edit</a>
 									<a href="#" onclick="return confirm('are you sure?')" class="btn btn-danger">Delete</a>
 								</td>
 							</tr>
