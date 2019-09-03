@@ -1,9 +1,10 @@
 <?php
 
 $pdo = new PDO('mysql:host=localhost;dbname=my_new_DB;charset=utf8;', 'root', '123');
-$sql = 'SELECT * FROM users';
+$sql = "SELECT * FROM users";
 $statement = $pdo->query($sql);
 $users = $statement->fetchAll(PDO::FETCH_ASSOC);
+
 
 ?>
 
@@ -20,7 +21,7 @@ $users = $statement->fetchAll(PDO::FETCH_ASSOC);
 		<div class="row">
 			<div class="col-md-12">
 				<h1>User management</h1>
-				<a href="create.html" class="btn btn-success">Add User</a>
+				<a href="create.php" class="btn btn-success">Add User</a>
 				
 				<table class="table">
 					<thead>
@@ -39,7 +40,7 @@ $users = $statement->fetchAll(PDO::FETCH_ASSOC);
 								<td><?php echo $user['Username'] ?></td>
 								<td><?php echo $user['Email'] ?></td>
 								<td>
-									<a href="edit.html" class="btn btn-warning">Edit</a>
+									<a href="edit.php<?='/?id='.$user['id']?>" class="btn btn-warning">Edit</a>
 									<a href="#" onclick="return confirm('are you sure?')" class="btn btn-danger">Delete</a>
 								</td>
 							</tr>
