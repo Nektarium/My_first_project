@@ -23,7 +23,7 @@
 			<div class="col-md-6">
 				<h1>Edit User ID <?php echo $idLink;?></h1>
 				<form action="editor.php" enctype="multipart/form-data" method="POST">
-					<input type="hidden" name="id" value="">
+					<input type="hidden" name="id" value="<?php echo $users['id'];?>">
 					<div class="form-group">
 						<label for="">Username</label>
 						<input type="text" name="usernameEdit" class="form-control" value="<?php echo $users['Username'];?>">
@@ -38,7 +38,7 @@
 
 					</div>
 					<div class="form-group">
-						<button type="submit" name="submit" class="btn btn-warning">Submit</button>
+						<button type="submit" class="btn btn-warning">Submit</button>
 					</div>
 				</form>
 			</div>
