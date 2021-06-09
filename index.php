@@ -5,10 +5,9 @@ $sql = "SELECT * FROM users";
 $statement = $pdo->query($sql);
 $users = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-
 ?>
 
-<!DOCTYPE html>
+<!DOCTYPE html>f
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -41,7 +40,7 @@ $users = $statement->fetchAll(PDO::FETCH_ASSOC);
 								<td><?php echo $user['Email'] ?></td>
 								<td>
 									<a href="edit.php<?='?id='.$user['id']?>" class="btn btn-warning">Edit</a>
-									<a href="#" onclick="return confirm('are you sure?')" class="btn btn-danger">Delete</a>
+									<a href="delete.php<?='?id='.$user['id']?>" onclick="return confirm('are you sure?');" class="btn btn-danger">Delete</a>
 								</td>
 							</tr>
 						<?php } ?>
